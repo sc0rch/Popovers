@@ -103,6 +103,9 @@ public extension Popover {
 
         /// Let the client know that the popover was automatically dismissed.
         attributes.onDismiss?()
+        
+        /// Fix memory leak
+        container.popoverContainerView?.onMovedToWindow = nil
     }
 
     /**
